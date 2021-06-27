@@ -1,1 +1,1 @@
-1、用于记录一些学习的过程
+﻿recode the process of study
