@@ -21,7 +21,8 @@
 	（3）创建仓库（create repository）,输入仓库名，选择是否要readme.md，然后创建。
 	（4）根据出来的提示（如 git remote add origin git@github.com:michaelliao/learngit.git）将本地仓库和远程仓库关联。
 	（5）git push -u origin master（第一次推送加-u，后面的不加）。
-	（6）克隆远程仓库：git clone git@github.com:michaelliao/gitskills.git（大致命令），也有https的（git://是使用ssh，https的速度较慢）。
+	（6）git pull 抓取最新提交
+	（7）克隆远程仓库：git clone git@github.com:michaelliao/gitskills.git（大致命令），也有https的（git://是使用ssh，https的速度较慢）。
 
 4、分支管理
 	（1）head指向的是当前的分支。
@@ -29,3 +30,15 @@
 	（3）合并分支----------------git merge 分支名
 	（4）删除分支----------------git branch -d 分支名
 	（5）切换分支----------------git switch 分支名
+	（6）普通合并模式------------git merge --no-ff -m "merge with no-ff" 分支名（合并后的历史有分支，可以看出合并过，不加--no-ff看不出）
+	（7）master分支应该非常稳定，仅用来发布新版本。干活在分支上，分支是不稳定的。发布时将分支合并到master上。
+	（8）bug分支-----------------git stash（将当前的工作现场“储藏起来”，等以后恢复现场后继续工作--即当前工作的分支还没提交，需要在另外分支干活改bug）
+								 git stash pop（恢复现场，同时将stash内容也删了）
+								 git cherry-pick 提交号 （用于复制其他分支的提交到当前分支（即修改其他分支已修改但当前分支还存在的bug））
+	（9）feature分支-------------如果要丢弃一个没有被合并过的分支，可以通过git branch -D <name>强行删除
+	（10）多人协作---------------查看远程库信息，使用git remote -v；
+								本地新建的分支如果不推送到远程，对其他人就是不可见的；
+								从本地推送分支，使用git push origin branch-name，如果推送失败，先用git pull抓取远程的新提交	；
+								在本地创建和远程分支对应的分支，使用git checkout -b branch-name origin/branch-name，本地和远程分支的名称最好一致；
+								建立本地分支和远程分支的关联，使用git branch --set-upstream branch-name origin/branch-name；
+								从远程抓取分支，使用git pull，如果有冲突，要先处理冲突。
