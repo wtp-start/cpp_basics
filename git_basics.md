@@ -1,4 +1,4 @@
-!(参考网址)[https://www.liaoxuefeng.com/wiki/896043488029600]
+[参考网址]<https://www.liaoxuefeng.com/wiki>
 #### 1、git和svn
 1. svn为集中式的版本控制。依赖于中央服务器，所以是联网的。流程为先拉下来最新数据，干活，上传数据。
 2. git为分布式的版本控制。不必联网，且跟踪的是修改而非文件。
