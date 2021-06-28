@@ -1,3 +1,4 @@
+参考网址：https://www.liaoxuefeng.com/wiki/896043488029600
 1、git和svn
 	（1）svn为集中式的版本控制。依赖于中央服务器，所以是联网的。流程为先拉下来最新数据，干活，上传数据。
 	（2）git为分布式的版本控制。不必联网，且跟踪的是修改而非文件。
@@ -42,3 +43,14 @@
 								在本地创建和远程分支对应的分支，使用git checkout -b branch-name origin/branch-name，本地和远程分支的名称最好一致；
 								建立本地分支和远程分支的关联，使用git branch --set-upstream branch-name origin/branch-name；
 								从远程抓取分支，使用git pull，如果有冲突，要先处理冲突。
+
+5、标签管理
+	（1）打标签------------------git tag v1.0(标签名)
+	（2）查看所有标签------------git tag
+	（3）在以前的commit打标签----git tag 标签名 commit号
+	（4）查看标签信息------------git show 标签名
+	（5）删除标签----------------git tag -d 标签名
+	（6）推送标签到远程----------git push origin 标签名
+	（7）推送所有标签------------git push origin --tags
+	（8）删除远程标签------------先：git tag -d 标签名
+								 再：git push origin :refs/tags/标签名
